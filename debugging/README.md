@@ -16,22 +16,22 @@ All programs have been **thoroughly tested**, **documented**, and include **robu
 holbertonschool-chatgpt-introduction/
 ├── README.md
 └── debugging/
-    ├── 🧮 Mathematical Programs
-    │   ├── factorial.py              # Iterative factorial with full error handling
-    │   └── factorial_recursive.py    # Recursive factorial with documentation
-    ├── 🎮 Interactive Games  
-    │   ├── tic.py                    # Complete tic-tac-toe with win detection
-    │   └── mines.py                  # Minesweeper with auto-reveal & validation
-    ├── 💰 Financial Application
-    │   └── checkbook.py              # Full-featured checkbook manager
-    ├── 🌐 Web Application
-    │   └── change_background.html    # Interactive color changer
-    ├── 🔧 Utility Scripts
-    │   └── print_arguments.py        # Enhanced argument handler
-    ├── 🧪 Testing & Documentation
-    │   ├── test_all_programs.py      # Comprehensive test suite (35 tests)
-    │   └── TEST_GUIDE.md            # Testing documentation
-    └── __pycache__/                  # Python cache directory
+	├── 🧮 Mathematical Programs
+	│   ├── factorial.py              # Iterative factorial with full error handling
+	│   └── factorial_recursive.py    # Recursive factorial with documentation
+	├── 🎮 Interactive Games  
+	│   ├── tic.py                    # Complete tic-tac-toe with win detection
+	│   └── mines.py                  # Minesweeper with auto-reveal & validation
+	├── 💰 Financial Application
+	│   └── checkbook.py              # Full-featured checkbook manager
+	├── 🌐 Web Application
+	│   └── change_background.html    # Interactive color changer
+	├── 🔧 Utility Scripts
+	│   └── print_arguments.py        # Enhanced argument handler
+	├── 🧪 Testing & Documentation
+	│   ├── test_all_programs.py      # Comprehensive test suite (35 tests)
+	│   └── TEST_GUIDE.md            # Testing documentation
+	└── __pycache__/                  # Python cache directory
 ```
 
 ## 🚀 Features & Improvements
@@ -73,13 +73,13 @@ holbertonschool-chatgpt-introduction/
 holbertonschool-chatgpt-introduction/
 ├── README.md
 └── debugging/
-    ├── change_background.html    # HTML/CSS/JS background color changer
-    ├── checkbook.py             # Python checkbook balance manager
-    ├── factorial.py             # Python factorial calculation (iterative)
-    ├── factorial_recursive.py   # Python factorial calculation (recursive)
-    ├── mines.py                 # Python minesweeper-related code
-    ├── print_arguments.py       # Python argument printing utility
-    └── tic.py                   # Python tic-tac-toe game
+	├── change_background.html    # HTML/CSS/JS background color changer
+	├── checkbook.py             # Python checkbook balance manager
+	├── factorial.py             # Python factorial calculation (iterative)
+	├── factorial_recursive.py   # Python factorial calculation (recursive)
+	├── mines.py                 # Python minesweeper-related code
+	├── print_arguments.py       # Python argument printing utility
+	└── tic.py                   # Python tic-tac-toe game
 ```
 
 ## 📚 Program Descriptions
