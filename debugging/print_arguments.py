@@ -28,10 +28,8 @@ def main():
         print("Usage: python3 print_arguments.py <arg1> <arg2> ...")
         return
     
-    # Print each argument (starting from index 1 to skip script name)
-    print(f"Arguments provided ({len(sys.argv) - 1} total):")
     for i in range(1, len(sys.argv)):
-        print(f"Argument {i}: {sys.argv[i]}")
+        print(f"{sys.argv[i]}")
 
 if __name__ == "__main__":
     main()

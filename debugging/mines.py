@@ -33,6 +33,9 @@ class Minesweeper:
         count = 0
         for dx in [-1, 0, 1]:
             for dy in [-1, 0, 1]:
+                # Skip the center cell (don't count the cell itself)
+                if dx == 0 and dy == 0:
+                    continue
                 nx, ny = x + dx, y + dy
                 if 0 <= nx < self.width and 0 <= ny < self.height:
                     if (ny * self.width + nx) in self.mines:
@@ -40,6 +43,7 @@ class Minesweeper:
         return count
 
     def reveal(self, x, y):
+        # Prevent infinite recursion by checking if already revealed
         if self.revealed[y][x]:
             return True
         if (y * self.width + x) in self.mines:
@@ -48,14 +52,18 @@ class Minesweeper:
         if self.count_mines_nearby(x, y) == 0:
             for dx in [-1, 0, 1]:
                 for dy in [-1, 0, 1]:
+                    if dx == 0 and dy == 0:  # Skip center cell
+                        continue
                     nx, ny = x + dx, y + dy
                     if 0 <= nx < self.width and 0 <= ny < self.height and not self.revealed[ny][nx]:
                         self.reveal(nx, ny)
         return True
 
     def check_win(self):
+        """Check if the player has won by revealing all non-mine cells."""
         for y in range(self.height):
             for x in range(self.width):
+                # If there's an unrevealed cell that's not a mine, game not won yet
                 if not self.revealed[y][x] and (y * self.width + x) not in self.mines:
                     return False
         return True
@@ -66,30 +74,17 @@ class Minesweeper:
             try:
                 x = int(input("Enter x coordinate: "))
                 y = int(input("Enter y coordinate: "))
-                
-                if x < 0 or x >= self.width or y < 0 or y >= self.height:
-                    print(f"Coordinates must be between 0-{self.width-1} for x and 0-{self.height-1} for y.")
-                    continue
-                
-                if self.revealed[y][x]:
-                    print("This cell is already revealed!")
-                    continue
-                
                 if not self.reveal(x, y):
                     self.print_board(reveal=True)
                     print("Game Over! You hit a mine.")
                     break
-                
+                # Check for win condition after each successful move
                 if self.check_win():
                     self.print_board()
-                    print("Congratulations! You won!")
+                    print("Congratulations! You've won the game.")
                     break
-                    
             except ValueError:
                 print("Invalid input. Please enter numbers only.")
-            except KeyboardInterrupt:
-                print("\nGame interrupted. Goodbye!")
-                break
 
 if __name__ == "__main__":
     game = Minesweeper()
