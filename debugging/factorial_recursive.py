@@ -1,4 +1,15 @@
 #!/usr/bin/python3
+"""
+Factorial Calculator - Recursive Implementation
+
+This module calculates the factorial of a number using a recursive approach.
+The factorial of n (written as n!) is the product of all positive integers
+from 1 to n. By mathematical convention, 0! = 1.
+
+Author: Holberton School Student
+Date: September 2025
+"""
+
 import sys
 
 

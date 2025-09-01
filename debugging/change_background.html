@@ -1,40 +1,100 @@
 <!DOCTYPE html>
+<!--
+Background Color Changer - Interactive Web Page
+
+This HTML page demonstrates basic web development concepts including:
+- HTML structure and semantics
+- CSS styling for layout and appearance  
+- JavaScript for interactivity and DOM manipulation
+- Event handling for user interactions
+
+Author: Holberton School Student
+Date: September 2025
+-->
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Change Background Color</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        padding-top: 50px;
-    }
-    button {
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-    }
-</style>
+    <!-- Meta tags for proper document setup -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+    
+    <!-- Internal CSS for styling -->
+    <style>
+        /* Body styling for centered layout */
+        body {
+            font-family: Arial, sans-serif;  /* Clean, readable font */
+            text-align: center;              /* Center all content */
+            padding-top: 50px;               /* Add space from top */
+            transition: background-color 0.3s ease; /* Smooth color transitions */
+        }
+        
+        /* Button styling for better user experience */
+        button {
+            padding: 10px 20px;     /* Internal spacing */
+            font-size: 16px;        /* Readable text size */
+            cursor: pointer;        /* Show it's clickable */
+            border: 2px solid #333; /* Visible border */
+            border-radius: 5px;     /* Rounded corners */
+            background-color: #f0f0f0; /* Light background */
+            transition: all 0.3s ease; /* Smooth hover effects */
+        }
+        
+        /* Button hover effect for better interactivity */
+        button:hover {
+            background-color: #ddd;
+            transform: scale(1.05); /* Slight size increase on hover */
+        }
+        
+        /* Style for the instruction text */
+        h2 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+    </style>
 </head>
 <body>
 
-<h2>Click the button to change the background color</h2>
+    <!-- Main heading with instructions -->
+    <h2>Click the button to change the background color</h2>
 
-<button id="colorButton">Change Color</button>
+    <!-- Interactive button with unique ID for JavaScript targeting -->
+    <button id="colorButton">Change Color</button>
 
-<script>
-    document.getElementById("colorButton").addEventListener("click", function() {
-        changeBackgroundColor();
-    });
+    <!-- JavaScript for functionality -->
+    <script>
+        /**
+         * Add event listener to the button when page loads
+         * This connects the button click to our color change function
+         */
+        document.getElementById("colorButton").addEventListener("click", function() {
+            changeBackgroundColor(); // Call our color changing function
+        });
 
-    function changeBackgroundColor() {
-        // Generate a random color
-        var randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
-        // Change the background color of the body
-        document.body.style.backgroundColor = randomColor;
-    }
-</script>
+        /**
+         * Function to generate a random color and apply it to the background
+         * 
+         * How it works:
+         * 1. Generate a random number between 0 and 16777215 (max hex color value)
+         * 2. Convert to hexadecimal string representation
+         * 3. Apply as background color to the body element
+         */
+        function changeBackgroundColor() {
+            // Generate random number for color (0 to 16777215 covers all RGB combinations)
+            var randomNumber = Math.floor(Math.random() * 16777215);
+            
+            // Convert to hexadecimal string and pad with zeros if needed
+            var hexColor = randomNumber.toString(16).padStart(6, '0');
+            
+            // Create full hex color string with # prefix
+            var randomColor = "#" + hexColor;
+            
+            // Apply the color to the body background
+            document.body.style.backgroundColor = randomColor;
+            
+            // Optional: Log the color for debugging
+            console.log("New background color: " + randomColor);
+        }
+    </script>
 
 </body>
 </html>
